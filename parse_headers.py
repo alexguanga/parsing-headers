@@ -29,7 +29,6 @@ class SearchInformation:
         d = defaultdict(dict)
 
         for path in paths_in_dir:
-
             if all(f not in path for f in list_to_filter):
                 dirs = self.get_last_entry(path) # Extracting the parent directory "../../.." of the file
                 files_dirs = os.listdir(path) # Extracting all the files in the directory
@@ -42,8 +41,6 @@ class SearchInformation:
 
         cleaned_d = self.clean_dict(d)
         return cleaned_d
-
-
 
     def clean_dict(self, unsorted_d):
         '''Returns a sorted dictioary (with the nester dictioanries as well)'''
@@ -111,8 +108,6 @@ class WriteTableContents:
                 for header in nested_v[1]:
                     f.write(f'\t\t- {header}\n')
         f.close()
-
-
 
 
 if __name__ == "__main__":
